@@ -54,7 +54,7 @@ sudo apt-get install eclipse -y
 # Usage
 1. Installing
 2. Goto: http://localhost:8080/TestFaces/faces/index.xhtml
-
+3. If you wish: Login as test:test or admin:admin (!)
 * NOTE: don't use /TestFaces/ or /TestFaces/faces/ as entry, there's no index configured!
 * Maybe you are lucky and you can fix it!
 ## Advanced Config
