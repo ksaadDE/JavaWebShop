@@ -11,13 +11,11 @@
 
 #### Installing the Requirements on Linux VM
 ```
-
 sudo apt-get install openjdk-11-jre -y 
 sudo apt-get install openjdk-11-jdk -y
 sudo apt-get install mysql-client mysql-server -y 
 sudo apt-get install git -y
 sudo apt-get install eclipse -y
-
 ```
 
 ### Adding Tomcat 
