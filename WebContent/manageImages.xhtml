@@ -43,7 +43,7 @@
 					<f:facet name="header">
 						Preview
 					</f:facet>
-					<h:graphicImage value="#{image.data}" style="max-width: 128px; max-height:128px;" rendered="#{image.data.length() gt 20}"/>
+					<h:graphicImage value="#{image.data}" style="max-width: 128px; max-height:128px;"  onchange="ajax:manageImagesController.save(image)" rendered="#{image.data.length() gt 20}"/>
 				</b:dataTableColumn>
 				<b:dataTableColumn>
 					<f:facet name="header">

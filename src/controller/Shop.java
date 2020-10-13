@@ -5,6 +5,8 @@ import javax.faces.bean.ManagedBean;
 
 import dBClasses.Article;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Shop Main
@@ -35,6 +38,8 @@ public class Shop implements java.io.Serializable {
 	
 	/** Variable for Instance (getInstance) */
 	private static Shop instance = new Shop();
+	
+	private static final Properties dbConfig  = loadDBConfig();
 	
 	/**
 	 * Shop init
@@ -378,20 +383,51 @@ public class Shop implements java.io.Serializable {
 	}
 	
 	/**
+	 * Stackoverflow copied piece, reads the config: config/config.properties 
+	 * 
+	 * @author some hero on StackOverflow <3
+	 * @return Properties Object
+	 */
+	public static Properties loadDBConfig() {
+		try {
+			// config file in /src/config
+			String configFilePath = "config.properties";
+	
+			// Properties Object
+			Properties props = new Properties();
+	
+			// Ressource to InputStream
+			InputStream propInStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(configFilePath);
+	
+			// Stream to Props Object
+			props.load(propInStream);
+			
+			// Return the Result
+			return props;
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		// if Exception return null
+		return null;
+	}
+	
+	/**
 	 * Shop Database get Connection using JDBC
-	 * @return Returns the (new) connection
+	 * @return Returns the (new) connectio n
 	 * @throws SQLException
 	 */
 	public static Connection getConnection() throws SQLException {
+
 		// Init nulled connection
 		Connection connect = null;
 		
+		
 		// JDBC Url - setting the serverTZ temporary fixes a bug in JDBC
-		String url = "jdbc:mysql://localhost:3306/Shop?serverTimezone=UTC&useTimezone=true";
+		String url = "jdbc:mysql://"+dbConfig.getProperty("dbHost")+":"+dbConfig.getProperty("dbPort")+"/Shop?serverTimezone=UTC&useTimezone=true";
 		// DB Username
-		String username = "karim";
+		String username = dbConfig.getProperty("dbUser");
 		// DB Password
-		String password = "";
+		String password = dbConfig.getProperty("dbPass");
 		
 		
 		// Tries to register the JDBC Driver and getting the con
@@ -460,5 +496,9 @@ public class Shop implements java.io.Serializable {
 	 */
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+	public static Properties getDbconfig() {
+		return dbConfig;
 	}
 }
