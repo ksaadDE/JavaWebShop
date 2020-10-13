@@ -1,7 +1,8 @@
 # TestFaces - KochsShop
+This is a educational TestShop Project.
 
-## Installation
-### System Requirements
+# Installation
+## System Requirements
 * Linux Ubuntu (tested in VirtualBox VM)
 * Package mysql-server (tested)
 * Package mysql-client (tested)
@@ -9,7 +10,7 @@
 * Tomcat created by Eclipse (tested)
 * git client (tested)
 
-#### Installing the Requirements on Linux VM
+## Installing the Requirements on Linux VM
 ```
 sudo apt-get install openjdk-11-jre -y 
 sudo apt-get install openjdk-11-jdk -y
@@ -18,25 +19,26 @@ sudo apt-get install git -y
 sudo apt-get install eclipse -y
 ```
 
-### Adding Tomcat 
-#### Inside Eclipse [TESTED]
+## Tomcat Installation
+### Inside of Eclipse
 1. Start Eclipse
 2. go to the servers Tab
 3. click on add new Server
 4. Do your options (chosing the install folder, downloading the Tomcat etc.)
 5. Afterwards you can use it inside Eclipse via the Servers Tab (maybe you have to select Java EE Views)
 
-#### Tomcat as a Linux System Service (systemctl or service) [UNTESTED]
+### No Eclipse (Linux Service, systemctl)
 1. `sudo apt-get install tomcat9 -y`
 2. Now configure it with Eclipse (maybe with help by StackOverflow, DuckDuckGo or YouTube)
 3. Same as above (inside Eclipses Server Tab)
 
-### Database Setup (MySQL, shop.sql) [TESTED!]
+
+## Database Setup (MySQL, shop.sql) [TESTED!]
 1. since you installed client & server above:
 2. cd <path/to/project>
 3. `sudo mysql < shop.sql`
 
-### Installing the Code of this project
+## Installing the Code of this project
 1. open the Terminal
 2. navigate via cd <dir> to the folder where you wish the files (e.g. /home/<user>/eclipse-workspace/)
 3. git clone https://github.com/ksaadDE/JavaWebShop/ 
@@ -45,11 +47,12 @@ sudo apt-get install eclipse -y
 6. Have fun <3
 
 
-## Usage
-After the installation you can go to: http://localhost:8080/TestFaces/faces/index.xhtml
-It's important that you use that URL as entry point, due to some misconfiguration. 
-Maybe you are lucky and you can fix it!
-NEVER(!!) USE IT FOR ANYTHING ELSE THAN FOR EDUCATIONAL PURPOSES!
+# Usage
+1. Installing
+2. Goto: http://localhost:8080/TestFaces/faces/index.xhtml
+
+* NOTE: don't use /TestFaces/ or /TestFaces/faces/ as entry, there's no index configured!
+* Maybe you are lucky and you can fix it!
 
 # License
 ## Third Party hard work
