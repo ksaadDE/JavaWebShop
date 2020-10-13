@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:d="http://xmlns.jcp.org/jsp/jstl/core"
+>
+<!-- http://java.sun.com/jsf/html  http://xmlns.jcp.org/jsf/html -->
+<h:head>
+	<d:if test="#{(search != null and search.length() > 0)}">
+		<title> 
+			Search '<h:outputText value="#{search}" />' - <h:outputText value="#{Shop.getInstance().getName()}" />
+		</title>
+	</d:if>
+	
+	
+	<d:if test="#{(search == null)}">
+		<title> 
+			Our Articles - <h:outputText value="#{Shop.getInstance().getName()}" />
+		</title>
+	</d:if>
+	
+</h:head> 
+<h:body style="padding: 50px;">
+		<c:include src="/navbar.xhtml" />
+		<br/>
+		<!-- <h:inputText name="search" id="search" size="40" value="#{param['search']}"  rendered="#{search == null}"/> -->
+<h:form>
+	<label for="search">Article Search</label>
+	<h:inputText name="search" id="search" size="40" value="#{search}" />
+	
+	<d:if test="#{(search == null or search.length() == 0 )}">
+	    
+		<p:dataTable var="article" value="#{Shop.getInstance().getArticleList()}">
+			<f:facet name="header">
+			    	All Articles
+			</f:facet>
+			<p:column><h:graphicImage style="max-width:100%; max-height:auto;" value="#{article.image.data}" rendered="#{article.image.data.length() gt 20}" /></p:column>
+			<p:column><h:outputText value="#{article.name}"></h:outputText></p:column>
+			<p:column><h:outputText value="#{article.description}"></h:outputText></p:column>
+			<p:column>$ <h:outputText value="#{article.roundedPrice()}"></h:outputText> </p:column>
+			<p:column><h:commandLink action="#{ShoppingCart.addArticle(article)}" value="+" /></p:column>
+		</p:dataTable>
+	</d:if>
+	
+	<d:if test="#{(search != null and search.length() > 0)}">	
+		<p:dataTable var="article" value="#{Shop.getInstance().getArticleList(search.toLowerCase())}">
+		    
+		    <f:facet name="header">
+		        Artikel mit '<h:outputText value="#{search}"/>'
+		    </f:facet>
+		    <p:column><h:graphicImage value="#{article.image.data}" rendered="#{article.image.data.length() gt 20}" /></p:column>
+			<p:column><h:outputText value="#{article.name}"></h:outputText></p:column>
+			<p:column><h:outputText value="#{article.description}"></h:outputText></p:column>
+			<p:column><h:outputText value="#{article.roundedPrice()}"></h:outputText></p:column>
+			<p:column><h:commandLink action="#{ShoppingCart.addArticle(article)}" value="+" /></p:column>
+		</p:dataTable>	
+	</d:if>
+	</h:form>
+	<c:include src="/footer.xhtml" />
+</h:body>
+</html>

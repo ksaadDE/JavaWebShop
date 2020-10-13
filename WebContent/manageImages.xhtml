@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- http://java.sun.com/jsf/html  http://xmlns.jcp.org/jsf/html -->
+<h:head>
+	<title>Image Management - <h:outputText value="#{ArticleController.article.name}" /> </title>
+</h:head> 
+<h:body style="padding: 50px;">
+	<c:include src="/navbar.xhtml" />
+	<p:panel rendered="#{LoginController.getSessionUser().isLoggedin() and LoginController.getSessionUser().isAdmin()}">
+		<h1>Image Management</h1>
+		<hr/>
+		<b:alert severity="info">
+			<strong>No upload possible :/</strong>
+		</b:alert>
+		
+		<h:form>
+			<b:commandButton look="primary" icon="plus-sign" tooltip="add new" action="#{manageImagesController.addNew()}"/><br/><br/>
+			
+			<b:dataTable  value="#{manageImagesController.imageList}" var="image">
+				<b:dataTableColumn value="#{image.id}">
+					<f:facet name="header">
+						ID
+					</f:facet>
+				</b:dataTableColumn>
+				<b:dataTableColumn>
+					<f:facet name="header">
+						Name
+					</f:facet>
+					<b:inputText value="#{image.name}" onchange="ajax:manageImagesController.save(image)" />
+				</b:dataTableColumn>
+				<b:dataTableColumn value="">
+					<f:facet name="header">
+						Data
+					</f:facet>
+					<b:inputTextarea cols="30" rows="10" value="#{image.data}"  onchange="ajax:manageImagesController.save(image)" />
+				</b:dataTableColumn>
+				<b:dataTableColumn>
+					<f:facet name="header">
+						Preview
+					</f:facet>
+					<h:graphicImage value="#{image.data}" style="max-width: 128px; max-height:128px;" rendered="#{image.data.length() gt 20}"/>
+				</b:dataTableColumn>
+				<b:dataTableColumn>
+					<f:facet name="header">
+						Options
+					</f:facet>
+					<b:commandButton look="danger" icon="minus-sign" tooltip="delete this one" action="#{manageImagesController.delete(image.id)}"/>
+				</b:dataTableColumn>
+			</b:dataTable>
+			<b:commandButton look="primary" icon="plus-sign" tooltip="add new" action="#{manageImagesController.addNew()}"/>
+		</h:form>
+	</p:panel>
+	
+	<b:alert style="margin-top: 50px;" severity="danger" rendered="#{LoginController.getSessionUser() == null or not LoginController.getSessionUser().isAdmin()}">
+	  <strong>Error 403 </strong> Sorry you're not loggedin/no admin! =(
+	</b:alert>
+	<c:include src="/footer.xhtml" />
+</h:body>
+</html>

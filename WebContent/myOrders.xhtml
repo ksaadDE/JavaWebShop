@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:d="http://xmlns.jcp.org/jsp/jstl/core"
+>
+<!-- http://java.sun.com/jsf/html  http://xmlns.jcp.org/jsf/html -->
+<h:head>
+	<title> 
+		Your Orders
+	</title>
+</h:head> 
+<h:body style="padding: 50px;">
+		<c:include src="/navbar.xhtml" />
+		<br/>
+		<b:alert severity="danger" rendered="#{!LoginController.getSessionUser().isLoggedin()}"><strong>ERROR</strong> You can't see your orders, you are not loggedin.</b:alert>
+		<br/>
+		<h:form rendered="#{LoginController.getSessionUser().isLoggedin()}">
+          <b:dataTable var="order" value="#{OrderController.getOrdersByUser()}">
+			<b:dataTableColumn order="desc">
+				<f:facet name="header">
+				    	Order ID
+				</f:facet>
+				<p:column>
+					<h:outputText value="#{order.id}" />
+				</p:column>
+			</b:dataTableColumn>
+			<b:dataTableColumn>
+				<f:facet name="header">
+				    	Order Status
+				</f:facet>
+				<p:column>
+					 <b:label text="Unkown" severity="danger" rendered="#{order.status lt 1 or order.status gt 4}"/>
+					 <b:label text="New" severity="primary" rendered="#{order.status == 1}"/>
+					 <b:label text="Ready for delivery" severity="warning" rendered="#{order.status == 2}"/>
+					 <b:label text="On the Way" severity="info" rendered="#{order.status == 3}"/>
+					 <b:label text="Success" severity="success" rendered="#{order.status == 4}"/>
+				</p:column>
+			</b:dataTableColumn>
+			<b:dataTableColumn>
+			<f:facet name="header">
+				    	Order Content
+				</f:facet>
+				<p:column>
+					   <c:repeat var="shoppingCartItem" value="#{order.getShoppingCart().getShoppingCartItems()}" varStatus="status">
+						<b:label text="#{shoppingCartItem.amount}x  #{shoppingCartItem.getArticle().name}(#{shoppingCartItem.getArticle().id}) #{shoppingCartItem.getArticle().getPriceMulitplyBy(shoppingCartItem.amount)} #{Shop.getCurrency()}" />
+						<br/>
+					   </c:repeat>
+					  <br/>
+					  <b>Sum Price:</b><br/>
+					 <h:outputText value="#{order.getShoppingCart().getPrice()} #{Shop.getCurrency()}" />
+				</p:column>
+			</b:dataTableColumn>
+          </b:dataTable>
+        </h:form>
+		<c:include src="/footer.xhtml" />
+</h:body>
+</html>

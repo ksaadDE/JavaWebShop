@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- http://java.sun.com/jsf/html  http://xmlns.jcp.org/jsf/html -->
+<h:head>
+	<title>User Management - <h:outputText value="#{ArticleController.article.name}" /> </title>
+</h:head> 
+<script>
+	function clearClick(f){
+		f.value='';
+	}
+</script>
+<h:body style="padding: 50px;">
+	<c:include src="/navbar.xhtml" />
+	<p:panel rendered="#{LoginController.getSessionUser().isLoggedin() and LoginController.getSessionUser().isAdmin()}">
+		<h1>User Management</h1>
+		<hr/>
+		<b:alert severity="success" rendered="#{manageOrdersController.savedStatus eq 1}">
+				<strong>User saved Successfully</strong> 
+		</b:alert>
+		
+		<b:alert severity="danger" rendered="#{manageOrdersController.savedStatus eq 0 or manageOrdersController.savedStatus eq 2}">
+				<strong>User saving failed</strong> 
+		</b:alert>
+		
+		<h:form onsubmit="return false;" onkeypress="if(event.keyCode==13)return false;">
+			<b:dataTable  value="#{manageUsersController.userList}" var="user">
+				<b:dataTableColumn value="#{user.id}" order="asc" data-order="#{user.id}">
+					<f:facet name="head">
+						ID
+					</f:facet>
+				</b:dataTableColumn>
+				<b:dataTableColumn data-search="#{user.name}">
+					<f:facet name="header">
+						Username
+					</f:facet>
+					<b:inputText colMd="4" value="#{user.name}" update="@form" onchange="ajax:manageUsersController.saveUser(user)" />
+				</b:dataTableColumn>
+				<b:dataTableColumn data-search="#{user.pass}">
+					<f:facet name="header">
+					    	Password
+					</f:facet>
+					<b:inputText value="#{user.pass}" update="@form" onclick="javascript:clearClick(this)" onchange="ajax:manageUsersController.saveUser(user)"/>
+				</b:dataTableColumn>
+				<b:dataTableColumn value="#{user.isadmin}">
+					<f:facet name="header">
+					    	Admin?
+					</f:facet>
+					<b:selectBooleanCheckbox colMd="3" value="#{user.isadmin}" update="@form" onchange="ajax:manageUsersController.saveUser(user)" onsubmit="return false;"/>
+				</b:dataTableColumn>
+				<b:dataTableColumn>
+					<f:facet name="header">
+						Options
+					</f:facet>
+					<!-- <b:commandButton look="danger" value="-" update="@form" onsubmit="return false;"/> -->
+					<b:commandButton look="danger" value="-" onclick="ajax:manageUsersController.delete(user)" update="@form"/>
+				</b:dataTableColumn>
+			</b:dataTable>
+		<hr/>
+		<b:commandButton look="primary" value="new User" onclick="ajax:manageUsersController.addNew()" update="@form" />
+		</h:form>
+	</p:panel>
+	
+	
+	<b:panel style="margin-top: 50px;" title="Error 403" look="danger" rendered="#{LoginController.getSessionUser() == null or not LoginController.getSessionUser().isAdmin()}">
+	  <h1>Sorry you're not loggedin/no admin! =(</h1>
+	</b:panel>
+	<c:include src="/footer.xhtml" />
+</h:body>
+</html>

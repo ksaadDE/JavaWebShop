@@ -1,0 +1,86 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- http://java.sun.com/jsf/html  http://xmlns.jcp.org/jsf/html -->
+<h:head>
+	<title>ArticleManagement - <h:outputText value="#{ArticleController.article.name}" /> </title>
+</h:head> 
+<h:body style="padding: 50px;">
+	<c:include src="/navbar.xhtml" />
+	<p:panel rendered="#{LoginController.getSessionUser().isLoggedin() and LoginController.getSessionUser().isAdmin()}">
+		<h1>Article Management</h1>
+		<hr/>
+		<b:alert severity="success" rendered="#{ArticleController.savedArticleStatus eq 1}">
+				<strong>Article Save Successfully</strong> 
+		</b:alert>
+		
+		<b:alert severity="danger" rendered="#{ArticleController.savedArticleStatus eq 0}">
+				<strong>Article Save Failed</strong> 
+		</b:alert>
+		
+		<b:form>
+			<h:panelGrid columns="2">
+				<b:formGroup>
+					<h:outputLabel value="ID| " for="id" />
+					<h:outputText id="id" value="#{ArticleController.article.id}" />
+					<br/>
+					<h:outputLabel value="Name:" for="name" />
+					<b:inputText id="name" update="@form" onchange="ajax:ArticleController.save()" value="#{ArticleController.article.name}" />
+	
+					<h:outputLabel value="Description:" for="description" />
+					<p:editor id="description" value="#{ArticleController.article.description}"> </p:editor>
+					 
+					<h:outputLabel value="Price:" for="price" />
+					<b:inputText id="price" update="@form" onchange="ajax:ArticleController.save()" value="#{ArticleController.article.price}">
+						<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+					</b:inputText>
+					<br/>
+					<b:formGroup>
+						<h:outputLabel value="Preview:" for="image" /><br/>
+						<h:graphicImage style="max-width:128px; max-height:128px;" id="image" value="#{ArticleController.article.image.data}" rendered="#{ArticleController.article.image.data.length() gt 20}"/>
+						<br/>
+						<b:selectOneMenu label="Picture" value="#{ArticleController.article.imageid}" onchange="ajax:ArticleController.save()" >
+							<f:selectItems value="#{ArticleController.getImageList()}" var="image" itemValue="#{image.id}" itemLabel="#{image.name}"  />
+						</b:selectOneMenu>
+					</b:formGroup>
+					<br/>
+					<br/>
+					<b:panelGrid columns="2">
+						<b:commandLink action="#{ArticleController.before}" > 
+							<b:iconAwesome value="arrow-circle-left" tooltip="Article before" size="4x" />
+						</b:commandLink>
+						
+						<b:commandLink action="#{ArticleController.next}" >
+							<b:iconAwesome value="arrow-circle-right" tooltip="Next Article" size="4x"/>
+						</b:commandLink>
+					</b:panelGrid>
+					<br/>
+					<b:panelGrid columns="4">
+						<b:commandLink action="#{ArticleController.delete}">
+							<b:iconAwesome value="minus-circle" tooltip="Delete Article" size="4x" />
+						</b:commandLink>
+						
+						<b:commandLink action="#{ArticleController.add}">
+							<b:iconAwesome value="plus-circle" tooltip="Add new Article" size="4x"/>
+						</b:commandLink>
+						
+						<b:commandLink action="#{ArticleController.save}">
+							<b:iconAwesome value="check-circle" tooltip="Save Article (Data)" size="4x"/>
+						</b:commandLink>
+					</b:panelGrid>
+				</b:formGroup>
+			</h:panelGrid>
+		</b:form>
+	</p:panel>
+	
+	
+	<b:panel style="margin-top: 50px;" title="Error 403" look="danger" rendered="#{LoginController.getSessionUser() == null or not LoginController.getSessionUser().isAdmin()}">
+	  <h1>Sorry you're not logged in/no Admin! =(</h1>
+	</b:panel>
+	<c:include src="/footer.xhtml" />
+</h:body>
+</html>

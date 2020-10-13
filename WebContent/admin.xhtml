@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Admin Dashboard - <h:outputText value="#{Shop.getInstance().name}" /> </title>
+	
+	<style>
+		#listLinks {
+			color: white;
+			background-color: orange;	
+		}
+		.navLinkRow {
+			color: orange;
+		}
+	</style>
+</h:head>
+
+<h:body style="padding: 70 px;">
+	<c:include src="navbar.xhtml" />
+	<br />
+	<b:panel style="margin-top: 50px;" rendered="#{LoginController.getSessionUser().isLoggedin() and LoginController.getSessionUser().isAdmin()}">
+		<h2>Welcome to the Boss room!</h2>
+		<br/>
+		<br/>
+		  <b:panel look="primary" title="Admininstration / Management" col="3">
+		    <b:listLinks>
+		      <b:navLink href="manageShop.xhtml" value="Manage Shop" styleClass="navLinkRow"/> 
+		      <b:navLink href="manageArticle.xhtml" value="Manage Articles" styleClass="navLinkRow" />
+		      <b:navLink href="manageOrders.xhtml" value="Manage Orders" styleClass="navLinkRow" /> 
+		      <b:navLink href="manageUsers.xhtml" value="Manage Users" styleClass="navLinkRow" />
+		      <b:navLink href="manageImages.xhtml" value="Manage Images" styleClass="navLinkRow" />
+		    </b:listLinks>
+		  </b:panel>
+		  <br/>
+		<p:chart  style="height:300px;" responsive="true" type="line" model="#{chartView.lineUsersModel}"/>
+	</b:panel>
+	
+	<b:panel style="margin-top: 50px;" title="Error 403" look="danger" rendered="#{LoginController.getSessionUser() == null or not LoginController.getSessionUser().isAdmin()}">
+	  <h1>Sorry you're not loggedin! =(</h1>
+	</b:panel>
+	
+	<c:include src="/footer.xhtml" />
+</h:body>	
+</html>

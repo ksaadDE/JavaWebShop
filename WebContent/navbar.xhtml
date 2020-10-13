@@ -1,0 +1,21 @@
+<c:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui">
+	<b:navBar brand="#{Shop.getInstance().getName()}" brandHref="index.xhtml" fixed="top" inverse="true">
+            <b:navbarLinks>
+                <b:navLink value="Home" href="index.xhtml"></b:navLink>
+                <b:navLink value="Offers" href="allArticles.xhtml"></b:navLink>
+                <b:navLink value="Login" href="login.xhtml" rendered="#{LoginController.getSessionUser() == null}"></b:navLink>
+                <b:navLink value="Admin" href="admin.xhtml" rendered="#{LoginController.getSessionUser().loggedin and LoginController.getSessionUser().isAdmin()}"></b:navLink>
+            </b:navbarLinks>
+            <b:navbarLinks pull="right">
+            	<b:navLink value="" href="shoppingCart.xhtml"><b:iconAwesome value="fa-shopping-cart" size="2x" tooltip="Your Shopping Cart"/><h:outputText rendered="#{ShoppingCart.itemCount gt 0}" value="#{ShoppingCart.itemCount}" /></b:navLink>
+            	<b:navLink value="" href="myOrders.xhtml"><b:iconAwesome value="fa-list-alt" size="2x" tooltip="Your Orders"/></b:navLink>
+            	<b:navLink value="Hello #{LoginController.getSessionUser().name}," href="#" rendered="LoginController.getSessionUser().loggedin"> </b:navLink>
+            	<b:navLink value="Logout" href="logout.xhtml" rendered="#{LoginController.getSessionUser().loggedin}"></b:navLink>
+            </b:navbarLinks>
+    </b:navBar>
+</c:composition>

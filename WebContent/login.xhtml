@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:c="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:b="http://bootsfaces.net/ui"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Login - <h:outputText value="#{Shop.getInstance().getName()}" /> </title>
+</h:head>
+
+<h:body style="padding: 70 px;">
+	<c:include src="navbar.xhtml" />
+	<br />
+	<b:alert severity="success" rendered="#{LoginController.loginSuccess}" style="margin-top: 50px">
+			<strong>You're logged in! :3</strong> 
+	</b:alert>
+	<p:panel style="margin-top: 50px;" rendered="#{LoginController.getSessionUser() == null}">
+		
+		<b:alert severity="danger" rendered="#{LoginController.loginFailed}">
+					<strong>Please check your password / username, we couldn't find the user</strong> 
+		</b:alert>
+		<h2>Please login:</h2>
+		<h:form>
+				<label for="usernamefield">Username:</label>
+				<b:inputText id="usernamefield" placeholder="Enter your Username" value="#{LoginController.username}" onclick="this.value='';" />
+				<label for="passwordfield">Password:</label>
+				<b:inputText id="passwordfield" placeholder="Enter your Password" value="#{LoginController.password}" onclick="this.value='';" />
+				<b:commandButton value="Login" action="#{LoginController.checkLogin()}" ajax="true" update="@form" look="success" onclick="window.location.href='index.xhtml'"/>
+		</h:form>
+	</p:panel>	
+	
+	<b:alert severity="danger" rendered="#{LoginController.getSessionUser().isLoggedin() and not LoginController.loginSuccess}" style="margin-top: 50px;">
+			<strong>Yo? You're already logged in!!</strong> 
+	</b:alert>
+	<c:include src="/footer.xhtml" />
+</h:body>	
+</html>
