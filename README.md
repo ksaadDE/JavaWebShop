@@ -24,10 +24,15 @@
 4. Do your options (chosing the install folder, downloading the Tomcat etc.)
 5. Afterwards you can use it inside Eclipse via the Servers Tab (maybe you have to select Java EE Views)
 
-#### As Linux System Service (systemctl or service) [UNTESTED]
+#### Tomcat as a Linux System Service (systemctl or service) [UNTESTED]
 1. `sudo apt-get install tomcat9 -y`
 2. Now configure it with Eclipse (maybe with help by StackOverflow, DuckDuckGo or YouTube)
 3. Same as above (inside Eclipses Server Tab)
+
+### Database Setup (MySQL, shop.sql) [TESTED!]
+1. since you installed client & server above:
+2. cd <path/to/project>
+3. `sudo mysql < shop.sql`
 
 ### Installing the Code of this project
 1. open the Terminal
