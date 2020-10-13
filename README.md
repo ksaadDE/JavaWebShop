@@ -50,7 +50,7 @@ NEVER(!!) USE IT FOR ANYTHING ELSE THAN FOR EDUCATIONAL PURPOSES!
 * BCrypt - not my work, license is in the file
 * others which are not my work - take a look at the file
 
-## My work - BY-NC-4.0 (no commercial, personal use, contribution, attribution!!!)
+## My work - BY-NC-4.0 (no commercial, personal use, sharing etc, ATTRIBUTION!!)
 A quick ref. to the Lic itself: https://creativecommons.org/licenses/by-nc/4.0/
 for the long Lic please read the LICENSE file inside this repo (if it's not there the license named here counts anyways!)
 
