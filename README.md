@@ -42,14 +42,17 @@
 After the installation you can go to: http://localhost:8080/TestFaces/faces/index.xhtml
 It's important that you use that URL as entry point, due to some misconfiguration. 
 Maybe you are lucky and you can fix it!
+NEVER(!!) USE IT FOR ANYTHING ELSE THAN FOR EDUCATIONAL PURPOSES!
 
 # License
-This Project uses Libraries by Third Parties e.g. GJSON by Google, BCrypt and others. Their work is differently licensed, however their license stuff is inside the Project.
-I don't claim ownership of their work, only my work is my own.
+## Third Party hard work
+* Google`s GJSON - not my work, see in the GJSON file for the License
+* BCrypt - not my work, license is in the file
+* others which are not my work - take a look at the file
 
-My own work is licensed under CC BY-NC 4.0, so free for personal use (and educational!), but no commercial usage && Sharing / adapting allowed for non commercial purposes! Attribution is required!
+## My work - BY-NC-4.0 (no commercial, personal use, contribution, attribution!!!)
 A quick ref. to the Lic itself: https://creativecommons.org/licenses/by-nc/4.0/
-for the long Lic please read the LICENSE file inside this repo
+for the long Lic please read the LICENSE file inside this repo (if it's not there the license named here counts anyways!)
 
 # Quick Links:
 ## Java Source
