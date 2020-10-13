@@ -60,6 +60,7 @@ sudo apt-get install eclipse -y
 ## Advanced Config
 If you wish to modify the DB Credentials
 * edit the Credentials inside /src/config/config.properties
+
 Keep in mind if you've used the shop.sql your default Creds are "test" with no password, Port 3306 and Host as localhost
 
 # Licenses / Legal Section
