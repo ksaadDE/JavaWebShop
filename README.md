@@ -38,8 +38,8 @@ sudo apt-get install eclipse -y
 
 
 ## Database Setup (MySQL, shop.sql) [TESTED!]
-1. since you installed client & server above:
-2. cd <path/to/project>
+1. since you've installed client & server above:
+2. `cd <path/to/project>`
 3. `sudo mysql < shop.sql`
 
 ## Installing the Code of this project
