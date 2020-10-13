@@ -54,8 +54,8 @@ sudo apt-get install eclipse -y
 * NOTE: don't use /TestFaces/ or /TestFaces/faces/ as entry, there's no index configured!
 * Maybe you are lucky and you can fix it!
 
-# License
-## Third Party hard work
+# Licenses / Legal Section
+### Third Party hard work
 * Google`s GJSON - not my work, see in the GJSON file for the License
 * BCrypt - not my work, license is in the file
 * others which are not my work - take a look at the file
