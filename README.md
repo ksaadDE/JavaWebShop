@@ -24,7 +24,7 @@ sudo apt-get install eclipse -y
 ```
 
 ## Tomcat Installation
-### Inside of Eclipse
+### Inside of Eclipse [TESTED!]
 1. Start Eclipse
 2. go to the servers Tab
 3. click on add new Server
@@ -42,7 +42,7 @@ sudo apt-get install eclipse -y
 2. `cd <path/to/project>`
 3. `sudo mysql < shop.sql`
 
-## Installing the Code of this project
+## Installing the Code of this project [TESTED!]
 1. open the Terminal
 2. navigate via cd <dir> to the folder where you wish the files (e.g. /home/<user>/eclipse-workspace/)
 3. git clone https://github.com/ksaadDE/JavaWebShop/ 
