@@ -75,6 +75,9 @@ A quick ref. to the Lic itself: https://creativecommons.org/licenses/by-nc/4.0/
 for the long Lic please read the LICENSE file inside this repo (if it's not there the license named here counts anyways!)
 
 # Quick Links:
+## Java Doc
+https://github.com/ksaadDE/JavaWebShop/tree/master/javadoc
+
 ## Java Source
 https://github.com/ksaadDE/JavaWebShop/tree/master/src
 
