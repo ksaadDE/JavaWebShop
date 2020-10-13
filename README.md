@@ -69,6 +69,6 @@ for the long Lic please read the LICENSE file inside this repo (if it's not ther
 ## Java Source
 https://github.com/ksaadDE/JavaWebShop/tree/master/src
 
-##WebContent
+## WebContent
 https://github.com/ksaadDE/JavaWebShop/tree/master/WebContent
 
