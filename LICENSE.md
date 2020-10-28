@@ -46,7 +46,7 @@ The User gurantees a lawful usage and gurantees it's **not** used in a governmen
 
 The User gurantees the Project is used in democratic manners and in or with Democracy.
 
-The License requires the User to make a viewable and public Notice, who the Project belongs to and who's the Creator of it.
+The License requires the User to make a viewable and public Notice, who/where the Project belongs to and must referencing the Creator of it.
 
 The License requires the User to share this work and his/her changes to it in a public manner as defined in "Section 1, Definition" under Source Sharing. This includes the Source Code, all Changes and the Documentation for the Code, which needs to be shared.
 
