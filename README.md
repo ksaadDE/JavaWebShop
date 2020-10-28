@@ -65,7 +65,7 @@ Keep in mind if you've used the shop.sql your default Creds are "test" with no p
 
 # Licenses / Legal Section
 ### Third Party hard work
-* Google`s GJSON - not my work, see in the GJSON file for the License
+* Google`s GSON - not my work, see in the GSON file for the License
 * BCrypt - not my work, license is in the file
 * others which are not my work - take a look at the file
 
@@ -84,3 +84,4 @@ https://github.com/ksaadDE/JavaWebShop/tree/master/src
 ## WebContent
 https://github.com/ksaadDE/JavaWebShop/tree/master/WebContent
 
+ 
