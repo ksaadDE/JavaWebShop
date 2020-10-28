@@ -3,8 +3,7 @@
 By using this Project (see Definition, Section 1) you (as the User) agree and consent to all following License Rules under the SAAD EDUCATIONAL LICENSE which is the license for this Project.
 
 ## Section 1 – Definitions.
-
-License - this SAAD EDUCATIONAL License Sheet
+* License - this SAAD EDUCATIONAL License Sheet
 * You - The User 
 * Creator - the Author of the shared parts or if so the Project
 * Project - The work / parts of it which are falling under the License
