@@ -1,5 +1,5 @@
 # TestFaces KochsShop
-SAAD EDUCATIONAL LICENSE
+* Licensed under SAAD EDUCATIONAL LICENSE
 
 This is a educational TestShop Project. I've created it during my studies at IUBH Distance Learning, based on the Course materials with my own favors.
 You should strongly ONLY use it for educational purposes, no warranty for anything! 
