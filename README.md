@@ -60,17 +60,18 @@ sudo apt-get install eclipse -y
 ## Advanced Config
 If you wish to modify the DB Credentials
 * edit the Credentials inside /src/config/config.properties
-
 Keep in mind if you've used the shop.sql your default Creds are "test" with no password, Port 3306 and Host as localhost
 
 # Licenses / Legal Section
 ### Third Party hard work
 * Google`s GSON - not my work, see in the GSON file for the License
 * BCrypt - not my work, license is in the file
+* BootsFaces https://www.bootsfaces.net/
+* PrimeFaces 8.0 (https://www.primefaces.org/)
 * others which are not my work - take a look at the file
 
 ## My work -  BY-NC-4.0 
-### (no commercial, personal use, sharing etc, ATTRIBUTION!!)
+### (no(n) commercial, personal use, sharing etc, ATTRIBUTION!!)
 A quick ref. to the Lic itself: https://creativecommons.org/licenses/by-nc/4.0/
 for the long Lic please read the LICENSE file inside this repo (if it's not there the license named here counts anyways!)
 
