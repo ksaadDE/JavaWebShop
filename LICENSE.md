@@ -1,8 +1,8 @@
-SAAD EDUCATIONAL LICENSE
+# SAAD EDUCATIONAL LICENSE
 
 By using this Project (see Definition, Section 1) you (as the User) agree and consent to all following License Rules under the SAAD EDUCATIONAL LICENSE which is the license for this Project.
 
-# Section 1 – Definitions.
+## Section 1 – Definitions.
 
 License - this SAAD EDUCATIONAL License Sheet
 * You - The User 
@@ -39,7 +39,7 @@ License - this SAAD EDUCATIONAL License Sheet
   * Right of free choice of work(place or time)
   * Right of Human Dignity
   
-# Section 2 Allowed usage
+## Section 2 Allowed usage
 As defined for institutions, individual and companies in democratic States/Countries it's allowed to use this Project for Educational Use only. 
 The User gurantees a lawful usage and gurantees it's **not** used in a governmental or private Organisation which engages in Terrorism, Weapons of Mass Destruction (including ABC Weapons), Espionage, Cyber-Attacks, Childpornography, Abuse of Humans or their rights, Secret Intelligence or Military.
 
@@ -49,7 +49,7 @@ The License requires the User to make a viewable and public Notice, who the Proj
 
 The License requires the User to share this work and his/her changes to it in a public manner as defined in "Section 1, Definition" under Source Sharing. This includes the Source Code, all Changes and the Documentation for the Code, which needs to be shared.
 
-# Section 3 - Limits and Restrictions
+## Section 3 - Limits and Restrictions
 This License gurantees and restricts the use of this Project, no matter if this license is fully or partly correct, lawful or not.
 It doesn't conflict with other Laws on the world. When used the German Law is applied, no international, foreign or other Laws.
 It doesn't conflict with Licenses of Third Party Content / Code which may included in this Project.
