@@ -1,6 +1,5 @@
 # TestFaces KochsShop
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![License CC BY-NC 4.0](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc/4.0/)
+SAAD EDUCATIONAL LICENSE
 
 This is a educational TestShop Project. I've created it during my studies at IUBH Distance Learning, based on the Course materials with my own favors.
 You should strongly ONLY use it for educational purposes, no warranty for anything! 
@@ -70,10 +69,9 @@ Keep in mind if you've used the shop.sql your default Creds are "test" with no p
 * PrimeFaces 8.0 (https://www.primefaces.org/)
 * others which are not my work - take a look at the file
 
-## My work -  BY-NC-4.0 
-### (no(n) commercial, personal use, sharing etc, ATTRIBUTION!!)
-A quick ref. to the Lic itself: https://creativecommons.org/licenses/by-nc/4.0/
-for the long Lic please read the LICENSE file inside this repo (if it's not there the license named here counts anyways!)
+## My work -  SAAD-Educational-License
+### (contribution & only for Educational purposes)
+for the Lic itself read the LICENSE file inside this repo, please!
 
 # Quick Links:
 ## Java Doc
