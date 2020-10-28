@@ -8,6 +8,7 @@ License - this SAAD EDUCATIONAL License Sheet
 * You - The User 
 * Creator - the Author of the shared parts or if so the Project
 * Project - The work / parts of it which are falling under the License
+* Source Sharing - A Software wich shares the code in a Repository or similiar to the public
 * Educational Use - Usage in Schools or Universities (no matter if private or public) and for show-case Examples in Businesses (which not Fall under Military or Secret Intelligence use purposes and not in relation to both)
 * Military - Use by a state or private driven Army / weaponized people which may used to attack / defend a Country / State / Instituion
 * Secret Intelligence - A governmental or private Institution which using Methods to spy on individuals, foreign authorities or inner authorities / instituions.
@@ -43,6 +44,10 @@ As defined for institutions, individual and companies in democratic States/Count
 The User gurantees a lawful usage and gurantees it's **not** used in a governmental or private Organisation which engages in Terrorism, Weapons of Mass Destruction (including ABC Weapons), Espionage, Cyber-Attacks, Childpornography, Abuse of Humans or their rights, Secret Intelligence or Military.
 
 The User gurantees the Project is used in democratic manners and in or with Democracy.
+
+The License requires the User to make a viewable and public Notice, who the Project belongs to and who's the Creator of it.
+
+The License requires the User to share this work and his/her changes to it in a public manner as defined in "Section 1, Definition" under Source Sharing. This includes the Source Code, all Changes and the Documentation for the Code, which needs to be shared.
 
 # Section 3 - Limits and Restrictions
 This License gurantees and restricts the use of this Project, no matter if this license is fully or partly correct, lawful or not.
