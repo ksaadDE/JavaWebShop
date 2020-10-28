@@ -2,9 +2,11 @@
 
 By using this Project (see Definition, Section 1) you (as the User) agree and consent to all following License Rules under the SAAD EDUCATIONAL LICENSE which is the license for this Project.
 
+The User agrees by using the Project automatically without concrete consent to all following restrictions, limits or rules, no matter when or if they change. When changed, the Creator doesn't need to verify cosent and also not to notify the User. The User checks if the License may have changed by himself.
+
 ## Section 1 – Definitions.
 * License - this SAAD EDUCATIONAL License Sheet
-* You - The User 
+* The User - You 
 * Creator - the Author of the shared parts or if so the Project
 * Project - The work / parts of it which are falling under the License
 * Source Sharing - A Software wich shares the code in a Repository or similiar to the public
@@ -55,3 +57,5 @@ It doesn't conflict with other Laws on the world. When used the German Law is ap
 It doesn't conflict with Licenses of Third Party Content / Code which may included in this Project.
 
 If the User is not sure if his use case / purpose is lawful or not license conflicting, the User contacts the Creator and asks for permission of usage otherwise a usage is prohibited. 
+
+This License doesn't relicense the work of others and respects their lawful rights and property, which may used in this Project.
