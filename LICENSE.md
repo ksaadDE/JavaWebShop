@@ -23,7 +23,7 @@ License - this SAAD EDUCATIONAL License Sheet
 * Human Rights: 
   * Right of Living / Human Life rights
   * Right of free Expression
-  * Right to have Screts (or Secrecy) and Hiding
+  * Right to have Screts (or Secrecy) and Hiding (often referred to as "Privacy")
   * Right to have Education
   * Right to be free as Human (= no slavery or moderns forms of it)
   * Right of Human Dignity
@@ -33,7 +33,7 @@ License - this SAAD EDUCATIONAL License Sheet
   * Opinion and Speech
   * Freedom of Journalism
   * Freedom of Schools / Teachers
-  * Right to have Screts (or Secrecy) and Hiding
+  * Right to have Screts (or Secrecy) and Hiding (often referred to as "Privacy")
   * Right to Vote
   * Right to Travel / Move
   * Right of free choice of work(place or time)
