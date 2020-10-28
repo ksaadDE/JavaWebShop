@@ -20,6 +20,7 @@ License - this SAAD EDUCATIONAL License Sheet
 * Childpornography - Absuing Children, making Material (Photos, Videos, Audios, or similiar) of them and/or sharing them (including uploading or using it)
 * Cyber-Attacks - Attacks of Systems which are in Cyberspace (like WAN, LAN, WAN, VLAN, Internet connected Systems). 
 * Third-Party - A third individual, instituion or company (another content contributor)
+* License Rule - A part of this License which defines what to do, what not to do or what have to do / must be in this License
 * Human Rights: 
   * Right of Living / Human Life rights
   * Right of free Expression
